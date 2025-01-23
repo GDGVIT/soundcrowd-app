@@ -7,14 +7,20 @@ import 'package:spotify_collab_app/providers/create_screen_provider.dart';
 import 'package:spotify_collab_app/view/widgets/custom_text_field.dart';
 import 'package:spotify_collab_app/providers/photo_upload_notifier.dart';
 
-class CreateScreen extends ConsumerWidget {
+class CreateScreen extends ConsumerStatefulWidget {
   const CreateScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  CreateScreenState createState() => CreateScreenState();
+}
+
+class CreateScreenState extends ConsumerState<CreateScreen> {
+  final TextEditingController eventNameController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
     double height = MediaQuery.sizeOf(context).height;
-    final TextEditingController eventNameController = TextEditingController();
     final createState = ref.watch(createScreenProvider);
 
     return Scaffold(
@@ -42,7 +48,10 @@ class CreateScreen extends ConsumerWidget {
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () => context.go('/home'),
+                      onPressed: () {
+                        context.go('/home');
+                        ref.read(photoUploadProvider.notifier).clearImage();
+                      },
                       icon: const Icon(Icons.arrow_back_ios),
                       color: const Color(0xff5822EE),
                     ),
@@ -187,6 +196,9 @@ class CreateScreen extends ConsumerWidget {
 
                                   if (result.success) {
                                     context.go('/home');
+                                    ref
+                                        .read(photoUploadProvider.notifier)
+                                        .clearImage();
                                   }
                                 },
                           child: Padding(

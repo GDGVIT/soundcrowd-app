@@ -59,26 +59,6 @@ class ConnectScreenState extends ConsumerState<ConnectScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff5822EE),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Connect To Spotify',
-          style: TextStyle(
-            fontFamily: 'Gotham',
-            shadows: <Shadow>[
-              Shadow(
-                color: Color(0xff000000),
-                offset: Offset(0, 3),
-              ),
-            ],
-            fontSize: 30,
-            fontWeight: FontWeight.w900,
-            color: Colors.white,
-          ),
-        ),
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-      ),
       body: Stack(children: [
         SizedBox(
           height: double.infinity,

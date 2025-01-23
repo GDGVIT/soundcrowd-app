@@ -23,33 +23,33 @@ class HomeScreen extends ConsumerWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Create new Playlist ·",
-                  style: TextStyle(
-                    fontFamily: "Gotham",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                InkWell(
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  onTap: () => context.go('/create'),
-                  child: Ink(child: const NewPlaylistButton()),
-                ),
-                const SizedBox(height: 20),
-                RefreshIndicator(
-                  onRefresh: () => playlistNotifier.fetchPlaylists(),
-                  child: SingleChildScrollView(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    child: FutureBuilder(
+      body: RefreshIndicator(
+        onRefresh: () => playlistNotifier.fetchPlaylists(),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Create new Playlist ·",
+                      style: TextStyle(
+                        fontFamily: "Gotham",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    InkWell(
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      onTap: () => context.go('/create'),
+                      child: Ink(child: const NewPlaylistButton()),
+                    ),
+                    const SizedBox(height: 20),
+                    FutureBuilder(
                       future: playlistNotifier.fetchPlaylists(),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState ==
@@ -155,25 +155,25 @@ class HomeScreen extends ConsumerWidget {
                         }
                       },
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          IgnorePointer(
-            ignoring: true,
-            child: SizedBox(
-              height: double.maxFinite,
-              width: double.maxFinite,
-              child: SvgPicture.asset(
-                'assets/bg.svg',
-                colorFilter:
-                    const ColorFilter.mode(Color(0xffd1dfdb), BlendMode.srcIn),
-                fit: BoxFit.cover,
               ),
             ),
-          ),
-        ],
+            IgnorePointer(
+              ignoring: true,
+              child: SizedBox(
+                height: double.maxFinite,
+                width: double.maxFinite,
+                child: SvgPicture.asset(
+                  'assets/bg.svg',
+                  colorFilter: const ColorFilter.mode(
+                      Color(0xffd1dfdb), BlendMode.srcIn),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
