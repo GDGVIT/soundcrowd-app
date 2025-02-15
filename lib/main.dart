@@ -21,7 +21,7 @@ Future<void> main() async {
     },
     appRunner: () => runApp(
       const ProviderScope(
-        child: CollabifyApp(),
+        child: SoundCrowdApp(),
       ),
     ),
   );

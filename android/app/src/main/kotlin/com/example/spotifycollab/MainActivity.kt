@@ -1,4 +1,4 @@
-package com.example.collabify
+package com.example.soundcrowd
 
 import io.flutter.embedding.android.FlutterActivity
 
