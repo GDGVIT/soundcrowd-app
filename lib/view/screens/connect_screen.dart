@@ -74,7 +74,7 @@ class ConnectScreenState extends ConsumerState<ConnectScreen> {
             children: [
               const Spacer(),
               const Text(
-                "Welcome To Collabify",
+                "Welcome To SoundCrowd",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontFamily: "Gotham",
@@ -135,7 +135,7 @@ class ConnectScreenState extends ConsumerState<ConnectScreen> {
                 height: 15,
               ),
               const Text(
-                "Authorize Collabify to access your Spotify account, "
+                "Authorize SoundCrowd to access your Spotify account, "
                 "enabling you to explore, play and share music with friends "
                 "effortlessly.",
                 style: TextStyle(

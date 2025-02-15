@@ -1,6 +1,6 @@
 {
-    "name": "collabify",
-    "short_name": "collabify",
+    "name": "soundcrowd",
+    "short_name": "soundcrowd",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

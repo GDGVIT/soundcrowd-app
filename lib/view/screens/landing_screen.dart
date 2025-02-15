@@ -46,7 +46,7 @@ class LandingScreen extends StatelessWidget {
                       ],
                     ),
                     const Text(
-                      'collabify',
+                      'soundcrowd',
                       style: TextStyle(
                         fontFamily: 'Gotham',
                         shadows: <Shadow>[

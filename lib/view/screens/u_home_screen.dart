@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
               SvgPicture.asset('assets/logo.svg'),
               const SizedBox(width: 10),
               const Text(
-                'Collabify',
+                'SoundCrowd',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 26,
