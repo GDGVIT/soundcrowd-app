@@ -3,7 +3,7 @@
 	<img width="400" src="https://user-images.githubusercontent.com/56252312/159312411-58410727-3933-4224-b43e-4e9b627838a3.png#gh-light-mode-only" alt="GDSC VIT"/>
 	<hr>
 	<p align="center">
-		<img  src="https://github.com/dk-a-dev/soundcrowd/blob/dev/src/lib/assets/logo.svg">
+<!-- 		<img  src="https://github.com/dk-a-dev/collabify/blob/dev/src/lib/assets/logo.svg"> -->
 	</p>
 </a>
 	<h2 align="center"> SoundCrowd App </h2>
