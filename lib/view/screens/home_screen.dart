@@ -29,11 +29,9 @@ class HomeScreen extends ConsumerWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(32.0),
-              child: SingleChildScrollView(
+              child: ListView(
                 physics: const AlwaysScrollableScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                children: [
                     const Text(
                       "Create new Playlist ·",
                       style: TextStyle(
@@ -158,7 +156,7 @@ class HomeScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-            ),
+          
             IgnorePointer(
               ignoring: true,
               child: SizedBox(
