@@ -57,6 +57,10 @@ class ConnectScreenState extends ConsumerState<ConnectScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final responsiveFontSize = size.width * 0.1;
+    final adaptiveFontSize = responsiveFontSize.clamp(38.0, 45.0);
+
     return Scaffold(
       backgroundColor: const Color(0xff5822EE),
       body: Stack(children: [
@@ -73,12 +77,12 @@ class ConnectScreenState extends ConsumerState<ConnectScreen> {
           child: Column(
             children: [
               const Spacer(),
-              const Text(
+              Text(
                 "Welcome To SoundCrowd",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontFamily: "Gotham",
-                  fontSize: 45,
+                  fontSize: adaptiveFontSize,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
                   height: 1.2,

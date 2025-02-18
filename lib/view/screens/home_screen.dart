@@ -7,11 +7,16 @@ import 'package:spotify_collab_app/view/widgets/custom_title.dart';
 import 'package:spotify_collab_app/view/widgets/new_playlist_button.dart';
 import 'package:spotify_collab_app/view/widgets/playlist_card.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     final playlistNotifier = ref.read(playlistProvider.notifier);
 
     return Scaffold(

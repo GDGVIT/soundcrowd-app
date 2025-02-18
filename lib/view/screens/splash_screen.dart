@@ -34,9 +34,9 @@ class SplashScreenState extends ConsumerState<SplashScreen> {
     if (!mounted) return;
 
     if (accessToken != null) {
-      context.replace('/home');
+      context.pushReplacement('/home');
     } else {
-      context.replace('/connect');
+      context.pushReplacement('/connect');
     }
   }
 
@@ -44,6 +44,7 @@ class SplashScreenState extends ConsumerState<SplashScreen> {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       'assets/splash.svg',
+      fit: BoxFit.cover,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
     );
