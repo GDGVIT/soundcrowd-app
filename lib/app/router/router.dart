@@ -12,9 +12,6 @@ import 'package:spotify_collab_app/view/screens/splash_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    errorBuilder: (context, state) {
-      return const HomeScreen();
-    },
     initialLocation: '/',
     routes: <GoRoute>[
       GoRoute(
